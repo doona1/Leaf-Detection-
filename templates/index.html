@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<script>
+    function checkFile() {
+        var fileInput = document.getElementById("image-input");
+        var uploadButton = document.getElementById("predict-btn");
+
+        if (fileInput.value) {
+            uploadButton.disabled = false;
+        } else {
+            uploadButton.disabled = true;
+        }
+    }
+</script>
+
+{% endblock %}
+
+
+{% block main %}
+
+<main>
+    <form class='input-form' action="/" method="POST" enctype="multipart/form-data">
+        <label for="image-input" class="drop-container">
+            <span class="drop-title">upload leaf image</span>
+            <input class='file-input' id='image-input' type="file" name="file" accept=".png, .jpg, .jpeg"
+                onchange="checkFile()">
+        </label>
+        <button class='btn' id='predict-btn' type="submit"' disabled>Predict</button>
+    </form>
+</main>
+
+{% endblock %}

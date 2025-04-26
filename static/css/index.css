@@ -1,0 +1,93 @@
+.input-form {
+  margin: auto;
+  max-width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.drop-container {
+  height: 70%;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+  border: 3px dashed green;
+  background-color: rgb(235, 254, 235);
+}
+
+.drop-container:hover {
+  background-color: rgb(217, 255, 217);
+  border-color: #111;
+}
+
+.drop-container:hover .drop-title {
+  color: #222;
+}
+
+.drop-title {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.2s ease-in-out;
+}
+
+.file-input {
+  width: 90%;
+  max-width: 350px;
+  color: #444;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #555;
+}
+
+.file-input::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: darkblue;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.file-input::file-selector-button:hover {
+  background: rgb(0, 0, 110);
+}
+
+.btn {
+  align-self: center;
+  width: min(100%, 300px);
+  background-image: linear-gradient(-180deg, #00d775, #00bd68);
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 4rem;
+  font-size: large;
+}
+
+.btn:hover {
+  background: #00bd68;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+@media screen and (min-width: 500px) {
+  .input-form {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+}

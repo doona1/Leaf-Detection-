@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/result.css')}}">
+
+{% endblock %}
+
+
+{% block main %}
+<main class="results">
+    <div class="prediction">
+        <p>Predicted disease:</p>
+        <h1>{{predicted_disease}}</h1>
+    </div>
+    <div class="grid-container">
+        <section class="disease-treatment">
+            <p>Treatement</p>
+            <ul>
+                {% for point in treatment %}
+                <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <figure>
+            <img src="{{url_for('static', filename='images/uploads/' + filename)}}" alt="Uploaded Image">
+            <figcaption>Confidence: {{confidence}}%</figcaption>
+        </figure>
+    </div>
+    <a href="/">Back</a>
+</main>
+
+{% endblock %}
